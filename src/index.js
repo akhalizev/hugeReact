@@ -25,7 +25,9 @@ const secondBook = {
 function BookList() {
   return (
     <section className="booklist">
-      <Book img={firstBook.img} title={firstBook.title} author={firstBook.author}/>
+      <Book img={firstBook.img} title={firstBook.title} author={firstBook.author}>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate doloribus voluptas impedit aut accusantium. Similique, tempore? Voluptates quia harum et.</p>
+      </Book>
       <Book img={secondBook.img} title={secondBook.title} author={secondBook.author}/>
       <Book/>
       <Book/>
@@ -33,8 +35,21 @@ function BookList() {
   );
 }
 
-const Book = ({ img, title, author}) => {
-  //const {img, author, title} = props   ––– destructuring
+// const Book = ({ img, title, author, children}) => {
+//   //const {img, author, title} = props   ––– destructuring
+//   return <article className='book'>
+//     {/* <Image />
+//     <Title />
+//     <Author /> */}
+//     <img src={img} alt="" />
+//     <h1>{author}</h1>
+//     <h4>{title}</h4>
+//     {children}
+//   </article>
+// }
+
+const Book = (props) => {
+  const {img, author, title, children} = props  // ––– destructuring
   return <article className='book'>
     {/* <Image />
     <Title />
@@ -42,10 +57,11 @@ const Book = ({ img, title, author}) => {
     <img src={img} alt="" />
     <h1>{author}</h1>
     <h4>{title}</h4>
+    {children}
+    { /* children is a content in between opening and closing tags in a component*/}
+    
   </article>
 }
-
-
 
 
 
