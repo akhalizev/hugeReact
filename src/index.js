@@ -9,15 +9,24 @@ import './index.css';
 
 const books = [
   {
-  img: "https://cdn.builtinaustin.com/cdn-cgi/image/f=auto,fit=crop,sharpen=.3,w=96,h=96/sites/www.builtinaustin.com/files/2020-11/Logo_Mark_Full_Color_Web_0.png",
-  author: "Amelia Hepworth",
-  title: "I love you to the Moon and Back"
+    id: 1,
+  img: "https://images-na.ssl-images-amazon.com/images/I/512V+zNxQ9L._SY375_.jpg",
+  author: "Jake Knapp",
+  title: "Sprint"
 },
-{
-  img: "https://miro.medium.com/max/72/1*QLkYPofnRbO2xaruTjTf6g.jpeg",
-  author: "Nostos Network",
-  title: "Nostos is seeking a Member Support Lead"
+  {
+    id: 2,
+  img: "https://images-na.ssl-images-amazon.com/images/I/41EmSCSJQYL._SY375_.jpg",
+  author: "Tanja Hester",
+  title: "Work is optional"
   },
+  {
+    id: 3,
+  img: "https://images-na.ssl-images-amazon.com/images/I/51llYNr0AJL._SY375_.jpg",
+  author: "Susan Weinschenk",
+  title: "100 Things Every Designer Needs to know"
+  },
+
 ]
 
 
@@ -26,15 +35,16 @@ const books = [
 // const title = "I love you to the Moon and Back"
 
 
-const names = ['john', 'peter', 'susan']; //array is going through MAP and return Name wrapped in h1
-const newNames = names.map((name) => {
-  return <h1>{name}</h1>
-});
-
 function BookList() {
   return (
     <section className="booklist">
-      {newNames}
+      {books.map((book) => {
+        //const { img, title, author } = book;
+        return (
+          <Book key={book.id} bookzuka={book}></Book>
+        )
+
+      })}
     </section>
   );
 }
@@ -53,7 +63,7 @@ function BookList() {
 // }
 
 const Book = (props) => {
-  const {img, author, title} = props  // ––– destructuring
+  const {img, author, title} = props.bookzuka  // ––– destructuring
   return <article className='book'>
     {/* <Image />
     <Title />
