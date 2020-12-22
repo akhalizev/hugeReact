@@ -7,30 +7,35 @@ import './index.css';
 // const Title = () => <h1>This is a title</h1>
 // const Author = () => <h4 style={{color:'#617d98', fontSize:'0.75rem', marginTop:'0.25rem', textTransform:'uppercase'}}>Author of this book</h4> //inline style
 
-const firstBook = {
+const books = [
+  {
   img: "https://cdn.builtinaustin.com/cdn-cgi/image/f=auto,fit=crop,sharpen=.3,w=96,h=96/sites/www.builtinaustin.com/files/2020-11/Logo_Mark_Full_Color_Web_0.png",
   author: "Amelia Hepworth",
   title: "I love you to the Moon and Back"
-}
-const secondBook = {
+},
+{
   img: "https://miro.medium.com/max/72/1*QLkYPofnRbO2xaruTjTf6g.jpeg",
   author: "Nostos Network",
   title: "Nostos is seeking a Member Support Lead"
-}
+  },
+]
+
+
 // const img = "https://cdn.builtinaustin.com/cdn-cgi/image/f=auto,fit=crop,sharpen=.3,w=96,h=96/sites/www.builtinaustin.com/files/2020-11/Logo_Mark_Full_Color_Web_0.png"
 // const author = "Amelia Hepworth"
 // const title = "I love you to the Moon and Back"
 
 //components are going here, in this App called Greeting
+
+const names = ['john', 'peter', 'susan'];
+const newNames = names.map((name) => {
+  return <h1>{name}</h1>
+});
+
 function BookList() {
   return (
     <section className="booklist">
-      <Book img={firstBook.img} title={firstBook.title} author={firstBook.author}>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate doloribus voluptas impedit aut accusantium. Similique, tempore? Voluptates quia harum et.</p>
-      </Book>
-      <Book img={secondBook.img} title={secondBook.title} author={secondBook.author}/>
-      <Book/>
-      <Book/>
+      {newNames}
     </section>
   );
 }
@@ -49,7 +54,7 @@ function BookList() {
 // }
 
 const Book = (props) => {
-  const {img, author, title, children} = props  // ––– destructuring
+  const {img, author, title} = props  // ––– destructuring
   return <article className='book'>
     {/* <Image />
     <Title />
@@ -57,8 +62,6 @@ const Book = (props) => {
     <img src={img} alt="" />
     <h1>{author}</h1>
     <h4>{title}</h4>
-    {children}
-    { /* children is a content in between opening and closing tags in a component*/}
     
   </article>
 }
