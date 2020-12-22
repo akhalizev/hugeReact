@@ -41,7 +41,7 @@ function BookList() {
       {books.map((book) => {
         //const { img, title, author } = book;
         return (
-          <Book key={book.id} bookzuka={book}></Book>
+          <Book key={book.id} {...book}></Book> //spread operator
         )
 
       })}
@@ -63,7 +63,7 @@ function BookList() {
 // }
 
 const Book = (props) => {
-  const {img, author, title} = props.bookzuka  // ––– destructuring
+  const {img, author, title} = props  // ––– destructuring
   return <article className='book'>
     {/* <Image />
     <Title />
