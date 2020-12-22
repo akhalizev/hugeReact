@@ -25,9 +25,8 @@ const books = [
 // const author = "Amelia Hepworth"
 // const title = "I love you to the Moon and Back"
 
-//components are going here, in this App called Greeting
 
-const names = ['john', 'peter', 'susan'];
+const names = ['john', 'peter', 'susan']; //array is going through MAP and return Name wrapped in h1
 const newNames = names.map((name) => {
   return <h1>{name}</h1>
 });
