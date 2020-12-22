@@ -42,7 +42,14 @@ function BookList() {
 
 
 const Book = (props) => {
+
+  //attribute, eventHandler
+  //onClick, onMouseOver
+
   const {img, author, title} = props  // ––– destructuring
+  const clickHandler = () => {
+    alert('buy!')
+  }
   return <article className='book'>
     {/* <Image />
     <Title />
@@ -50,6 +57,7 @@ const Book = (props) => {
     <img src={img} alt="" />
     <h1>{author}</h1>
     <h4>{title}</h4>
+    <button type="button" onClick={clickHandler}>Example</button>
     
   </article>
 }
